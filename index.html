@@ -1,12 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>大大安安想去哪？</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<link rel="stylesheet" type="text/css" href="csshake.css">
+<title>行動裝置程式設計作業</title>
 
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
+
 
 <script type="text/javascript" charset="utf-8">
 
@@ -17,7 +18,7 @@
         // Cordova is ready
         //
         function onDeviceReady() {
-            playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
+            playAudio("smb_coin.mp3");
         }
 
         // Audio player
@@ -54,100 +55,27 @@
                 }, 1000);
             }
         }
+       
 
-        // Pause audio
-        // 
-        function pauseAudio() {
-            if (my_media) {
-                my_media.pause();
-            }
-        }
+        </script>
 
-        // Stop audio
-        // 
-        function stopAudio() {
-            if (my_media) {
-                my_media.stop();
-            }
-            clearInterval(mediaTimer);
-            mediaTimer = null;
-        }
-
-        // onSuccess Callback
-        //
-        function onSuccess() {
-            console.log("playAudio():Audio Success");
-        }
-
-        // onError Callback 
-        //
-        function onError(error) {
-            alert('code: '    + error.code    + '\n' + 
-                  'message: ' + error.message + '\n');
-        }
-
-        // Set audio position
-        // 
-        function setAudioPosition(position) {
-            document.getElementById('audio_position').innerHTML = position;
-        }
-
-</script>
-
-<style type="text/css">
-body {
-	background-image: url();
-	background-repeat: repeat;
-	
-}
-html, body , .outer, .inner {
-    height:100%;
-    width:100%;
-    margin:0;
-} 
-</style>
 </head>
 
 <body>
 
-<script type="text/javascript">
-function AlertIt(){
-	//亂數
-	var myrandom = Math.round(Math.random()*2)
-	//一些白痴的話，用矩陣 Array
-	var messages = new Array()
-	messages[0] = "大大安安，想怎樣？"
-	messages[1] = "今天天氣好，想怎樣？"
-	messages[2] = "無聊嗎？來看影片～"
-	//連結清單
-	var links = new Array()
-	links[0] = "http://www.google.com"
-	links[1] = "http://www.yahoo.com"
-	links[2] = "http://www.youtube.com"
-	links[3] = "http://www.ntut.edu.tw"
-	//呼叫確認視窗
-	var answer = confirm(messages[myrandom])
-	//重點來了，如果點「是」，就連去該變數所指的網站
-	if (answer){
-		window.location = links[myrandom]
-	} 
-}
-</script>
-
 <table width="100%" height ="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td align="center" valign="middle">
-		<p>Hello, world. - from JC ;) <a href="media.html"> 揪瞇 </a> </p>
-		<a href="javascript:AlertIt();">
-		<div class="shake shake-crazy">	
-            <img src="images/dAbHead.png" width="auto" height="auto">
-			<p>按我</p></div>
-            
-		</a>
+		 
+         <a href="#" class="btn large" onclick="playAudio('smb_coin.mp3');"><img src="block.gif" width="190" height="190" border="0" onclick='this.src="coin1.gif"'onMouseOut='this.src="block.gif"'></a>
+
 	</td>
   </tr>
 </table>
+ 
 
-
+ 
 </body>
 </html>
+
+
