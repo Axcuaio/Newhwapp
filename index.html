@@ -75,15 +75,6 @@ div.innerHTML = '<embed src="'+url+'" loop="0" autostart="true" hidden="true"></
                 }, 1000);
             }
         }
-
-        // Pause audio
-        // 
-        function pauseAudio() {
-            if (my_media) {
-                my_media.pause();
-            }
-        }
-
        
 
         </script>
@@ -96,7 +87,7 @@ div.innerHTML = '<embed src="'+url+'" loop="0" autostart="true" hidden="true"></
   <tr>
     <td align="center" valign="middle">
 		 
-         <a href="#" class="btn large" onclick="pauseAudio('smb_coin.mp3');"><img src="block.gif" width="190" height="190" border="0" onclick='this.src="coin1.gif"'onMouseOut='this.src="block.gif"'></a></div>
+         <a href="#" class="btn large" onclick="playAudio('smb_coin.mp3');"><img src="block.gif" width="190" height="190" border="0" onclick='this.src="coin1.gif"'onMouseOut='this.src="block.gif"'></a></div>
 
 	</td>
   </tr>
