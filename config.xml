@@ -6,7 +6,11 @@
         id        = "com.phonegap.Coin"
         version   = "1.0.0">
 
+<<<<<<< HEAD
     <name>Touch me</name>
+=======
+    <name>myNtutNewApp_101370376</name>
+>>>>>>> parent of 0da3235... change
 
     <description>
         our homework in the class called myApp_101370376.
