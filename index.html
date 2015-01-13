@@ -2,59 +2,86 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>行動裝置期末作業</title>
 
-<title>行動裝置程式設計作業</title>
+<SCRIPT Language="JavaScript">
+<!--
+// Valor工作室小誌 [valor Studio]
+var speed = 5000  //圖片切換時間
+var img= new Array()
+var current = 0
+//一張圖片
+img[0] = new Image(); img[0].src = "facebook.gif";
+img[1] = new Image(); img[1].src = "facebook1.gif";
+img[2] = new Image(); img[2].src = "facebook2.gif";
+img[3] = new Image(); img[3].src = "facebook3.gif";
+img[4] = new Image(); img[4].src = "facebook4.gif";
+img[5] = new Image(); img[5].src = "facebook5.gif";
+img[6] = new Image(); img[6].src = "facebook6.gif";
+img[7] = new Image(); img[7].src = "facebook7.gif";
+img[8] = new Image(); img[8].src = "facebook222.gif";
 
-<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-<script type="text/javascript" charset="utf-8" src="main.js"></script>
-<script type="text/javascript" charset="utf-8">
 
-        // Wait for Cordova to load
-//
-document.addEventListener("deviceready", onDeviceReady, false);
-// Cordova is ready
-//
-function onDeviceReady() {
+
+function start() 
+{
+
+current++
+if(current >=img.length) current = 0
+document.imgs.src = img[current].src
+setTimeout("start()",speed);
+
+
 }
-// Audio player
-//
-var my_media = null;
-var mediaTimer = null;
-// Play audio
-//
-function playAudio(src) {
-// Create Media object from src
-my_media = new Media(src);
-// Play audio
-my_media.play();
-// Update my_media position every second
+
+function play_click(sef,url)
+{
+var div = document.getElementById('div1');
+div.innerHTML = '<embed src="'+url+'" loop="0" autostart="true" hidden="true"></embed>';
 }
-</script>
+
+</SCRIPT>
 
 <style type="text/css">
-body {
-	background-image: url();
-	background-repeat: repeat;
+        body div1 {
+	position:fixed;
+	top:50%;
+	left:50%;
+	margin-top:-300px;
+	margin-left:-200px;
 	
-}
-html, body , .outer, .inner {
-    height:100%;
-    width:100%;
-    margin:0;
-} 
-</style>
-
+        }
+		
+		body div {
+	position:fixed;
+	top:50%;
+	left:50%;
+	margin-top:-120px;
+	margin-left:-130px;
+	
+        }
+			
+    </style>
+    
+    
+    
 </head>
-<body>
 
-<table width="100%" height ="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td align="center" valign="middle">
-<a href="#" onClick="playAudio('http://themushroomkingdom.net/sounds/wav/smb/smb_coin.wav');"><img src="block.gif" width="190" height="190" border="0" onclick='this.src="coin1.gif"'onMouseOut='this.src="block.gif"'>    </a><br>
-	</td>
-  </tr>
-</table>
-<p id="audio_position"></p>
+<BODY onLoad="setTimeout('start()',speed);">
+
+<div1>
+<a href="javascript:go()"><img src="facebook.gif" height="60%" width="60%" 
+name="imgs" onclick='this.src="facebook.gif"' onclick="'start()',speed"
+
+</a>
+</div>
+
+
+
+<div id = "div1">
+<a href="#" onclick="play_click(this,'smb_coin.wav');"><img src="block.gif" width="200" height="200" align="center" onclick='this.src="coin1.gif"'onmouseout='this.src="block.gif"' /></a>
+</div>
+
+
 </body>
 </html>
-
