@@ -4,10 +4,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>行動裝置期末作業</title>
 
-<SCRIPT Language="JavaScript">
-<!--
+<script language="javascript" type="text/javascript">
 
-var speed = 5000  
+var speed = 5000  //圖片切換時間
 var img= new Array()
 var current = 0
 
@@ -34,25 +33,33 @@ setTimeout("start()",speed);
 
 }
 
-function play_click(sef,url)
-{
-var div = document.getElementById('div1');
-div.innerHTML = '<embed src="'+url+'" loop="0" autostart="true" hidden="true"></embed>';
+var img1=document.getElementById("div1");
+    
+//设置div起始点的坐标(0,0）左上角坐标
+var x=0,y=0;
+
+
+//右下边求出图片起始点最大X和Y的坐标值
+var w=window.screen.availWidth-640,h=window.screen.availHeight-960;
+
+function floatimg(){
+//随机产生坐标x和坐标Y的值（都是从零到起始点最大X和Y的坐标值）
+x=Math.round(Math.random()*(w));
+y=Math.round(Math.random()*(h));
+
+//alert(x+","+y);
+img1.style.left=x+"px";
+img1.style.top=y+"px";
+setTimeout("floatimg()",speed);
 }
+
 
 </SCRIPT>
 
 <style type="text/css">
         body div1 {
-	position:fixed;
-	top:50%;
-	left:50%;
-	margin-top:-100px;
-	margin-left:-50px;
-	
+	position:absolute;
         }
-		
-		
 			
     </style>
     
@@ -62,10 +69,10 @@ div.innerHTML = '<embed src="'+url+'" loop="0" autostart="true" hidden="true"></
 
 <BODY onLoad="setTimeout('start()',speed);">
 
-<div1>
-<a href="javascript:go()"><img src="facebook.gif" height="80%" width="80%" 
+<div id="div1">
+<a href="javascript:go()"><img src="facebook.gif" height="960" width="640" 
 name="imgs" onclick='this.src="facebook.gif"' onclick="'start()',speed"
-
+onclick="floatimg(),speed"
 </a>
 </div>
 
